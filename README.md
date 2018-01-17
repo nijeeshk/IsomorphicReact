@@ -1,2 +1,2 @@
-# isomorphic
+# isomorphicreact
 isomorphic react app
