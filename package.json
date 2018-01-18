@@ -6,8 +6,9 @@
   "author": "Nijeesh K <k.nijeesh91@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "dev:client": "webpack --config webpack.client.config.js --progress --watch",
-    "dev:start": "nodemon src/server"
+    "dev:watch": "webpack --progress --watch",
+    "dev:start": "nodemon src/server",
+    "build": "webpack"
   },
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -15,6 +16,7 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-image-crop": "^3.0.9",
     "react-router-dom": "^4.2.2"
   },
   "devDependencies": {

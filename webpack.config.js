@@ -9,30 +9,30 @@ const srcPath = './src/browser/';
 const distPath = './dist/';
 
 module.exports = {
-  target: "web",
-  entry: srcPath + "js/index.jsx",
+  target: 'web',
+  entry: srcPath + 'js/index.jsx',
   output: {
     path: path.resolve(__dirname, './dist'),
-    filename: "js/bundle.js"
+    filename: 'js/bundle.js'
   },
   resolve: {
     extensions: ['.js', '.jsx']
   },
-  devtool: "cheap-module-source-map",
+  devtool: 'cheap-module-source-map',
   module: {
     rules: [
       {
         test: [/\.svg$/, /\.gif$/, /\.jpe?g$/, /\.png$/, /\.webp$/],
-        loader: "file-loader",
+        loader: 'file-loader',
         options: {
-          name: "media/[name].[ext]",
+          name: 'media/[name].[ext]',
         }
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader',
         options: {
-          name: "fonts/[name].[ext]",
+          name: 'fonts/[name].[ext]',
         }
       },
       {
@@ -41,11 +41,11 @@ module.exports = {
           fallback: 'style-loader',
           use: [
             {
-              loader: "css-loader",
+              loader: 'css-loader',
               options: { importLoaders: 1 }
             },
             {
-              loader: "postcss-loader",
+              loader: 'postcss-loader',
               options: { plugins: [autoprefixer()] }
             },
             'sass-loader'
@@ -55,7 +55,7 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /(node_modules)/,
-        loader: "babel-loader",
+        loader: 'babel-loader',
       }
     ]
   },
@@ -66,12 +66,7 @@ module.exports = {
     new ProgressBarPlugin(),
     new webpack.NamedModulesPlugin(),
     new ExtractTextPlugin({
-      filename: "css/[name].css"
-    }),
-    new webpack.BannerPlugin({
-      banner: "__isBrowser__ = true;",
-      raw: true,
-      include: /\.(js|jsx)$/
+      filename: 'css/[name].css'
     }),
     new HtmlWebpackPlugin({
       filename: 'index.html',
