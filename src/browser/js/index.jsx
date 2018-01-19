@@ -1,15 +1,14 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { HashRouter as Router } from 'react-router-dom';
+import 'react-image-crop/lib/ReactCrop.scss';
 // import AppContainer from './components/widgets/AppContainer';
 import App from './components/App';
-import 'react-image-crop/lib/ReactCrop.scss';
 import '../assets/stylesheets/style.scss';
 
 render(
   <Router>
-    {/* <AppContainer> */}
-      <App />
-    {/* </AppContainer> */}
-  </Router>, document.getElementById('app')
+    <App />
+  </Router>,
+  document.getElementById('app'),
 );
